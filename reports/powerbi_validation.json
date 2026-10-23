@@ -1,0 +1,20 @@
+{
+  "native_engine": "Power BI Desktop",
+  "dax_measures_executed": 22,
+  "additional_sql_column_checks": 2,
+  "query_result": "24 columns, 1 row; Your query ran successfully.",
+  "sql_columns_imported": [
+    "Days to Ship",
+    "Discount Band"
+  ],
+  "sql_export_sha256": {
+    "category_summary.csv": "a041e7a68e4dbab5327a305c31b3fcfba73660ea88658051824fed16ed5f3217",
+    "dates.csv": "96f0531803af8de755e27c717fbf263952ba95283ad0988fb81aff1e325b5893",
+    "products.csv": "a0847888775308bbb6b78e64e927abe6d6cecdbcd48938534b793c885aa090cc",
+    "sales.csv": "510d543003bb1ea3c67d0a7264cf8f092a22cfa6d0ff22993d93a49c20e26bd9",
+    "sql_check_1.csv": "d11ee1419eb76b74345f3c6e69bd97827e3f05fb22d6cc67b459f9f8b48db0c2",
+    "sql_check_2.csv": "a041e7a68e4dbab5327a305c31b3fcfba73660ea88658051824fed16ed5f3217",
+    "sql_check_3.csv": "33c0c0c6e94e5506dea634d2a7229c0b0afd67788168ce35108569b6a7265c8b"
+  },
+  "rebuild_check": "CLI rerun reproduced byte-identical SQL CSV exports"
+}

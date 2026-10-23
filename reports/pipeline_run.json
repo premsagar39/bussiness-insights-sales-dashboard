@@ -1,0 +1,101 @@
+{
+  "workflow": "Python -> MySQL 8 -> Power BI",
+  "mysql_version": "8.0.46",
+  "source_file": "SuperStoreUS-2015 new .csv",
+  "source_sha256": "67bfb7bbfabb941754f882523ebdd86c87478d46848c02bea8534b9a8f9d4563",
+  "executed_at_utc": "2026-10-23T21:30:42.970556+00:00",
+  "source_rows": 1952,
+  "source_distinct_row_ids": 1951,
+  "sales": 1924337.88,
+  "profit": 224077.6118353,
+  "orders": 1365,
+  "customers": 1130,
+  "analysis_queries_executed": 13,
+  "powerbi_sql_exports": {
+    "sales": 1952,
+    "products": 913,
+    "dates": 181
+  },
+  "checks": {
+    "order_lines": true,
+    "distinct_orders": true,
+    "distinct_customers": true,
+    "sales": true,
+    "profit": true,
+    "missing_base_margin_preserved": true,
+    "no_join_fanout": true,
+    "product_key_coverage": true,
+    "sql_shipping_days": true,
+    "sql_discount_bands": true,
+    "sql_running_total": true,
+    "sql_join_reconciliation": true
+  },
+  "query_files_sha256": {
+    "00_reporting_views.sql": "d952f2f9e53d877cd909b5af674ac41b34711355efcdb671021ede44adf27228",
+    "00_schema.sql": "5c9fab32bb86ad8457a86571956e21de2436ba2324fac8d08f9099c519bf8aa2",
+    "01_basic_queries.sql": "b2ff6bdc49d2560294c62e40d962ab109efb222445d3335840d2c2da9ac75f0f",
+    "02_filtering_and_conditions.sql": "da8d6cd06d1da041d35d103b0d92132d3843c5d0b0ccaf940a1b7e423458a1c8",
+    "03_aggregation_kpis.sql": "fe595ab32a10994e6dc15eb5559a4286de1cf2fb6912b478cb4ea92fa4aa97cf",
+    "04_subqueries.sql": "4560bf6c8888b867c8512b46b103d3cf376752bd79af574c01a8c4d6b4d48d8e",
+    "05_date_time_analysis.sql": "a67c676de4b854a09c31b18ae27bcc1329a22e48438a343730b29a98ff23c726",
+    "06_window_functions.sql": "df10106b7bc101b1a1243a08dcb05983daebd97a08c0f4b0746d548ac67b1906",
+    "07_business_insights.sql": "54ecb31605ea2cc11e014218f26dcab3d3f6c73380618dbcacace809a6c7b31c",
+    "08_joins.sql": "2e94d758bac41ab9869a6467aeece58c43d88d0f4c5ae14f2f7f47d3539c7eb0",
+    "09_advanced_analysis.sql": "d76050e09fc8baf3758f643412ce96baa0b3546e025d1215852ed0636f11f757",
+    "Power bi used queries": "32eb5a5ad9becd93de2489f47c8ab9109276a100a306809ac625271a6eec2fb6"
+  },
+  "analysis_results": {
+    "portfolio_kpis": {
+      "rows": 1,
+      "sql_file": "queries/01_basic_queries.sql"
+    },
+    "loss_lines": {
+      "rows": 956,
+      "sql_file": "queries/02_filtering_and_conditions.sql"
+    },
+    "category_performance": {
+      "rows": 3,
+      "sql_file": "queries/03_aggregation_kpis.sql"
+    },
+    "repeat_customers": {
+      "rows": 286,
+      "sql_file": "queries/04_subqueries.sql"
+    },
+    "customer_summary": {
+      "rows": 1,
+      "sql_file": "queries/04_subqueries.sql"
+    },
+    "monthly_performance": {
+      "rows": 6,
+      "sql_file": "queries/05_date_time_analysis.sql"
+    },
+    "cumulative_monthly_sales": {
+      "rows": 6,
+      "sql_file": "queries/06_window_functions.sql"
+    },
+    "subcategory_diagnostics": {
+      "rows": 17,
+      "sql_file": "queries/07_business_insights.sql"
+    },
+    "discount_band_performance": {
+      "rows": 4,
+      "sql_file": "queries/07_business_insights.sql"
+    },
+    "region_customer_segment": {
+      "rows": 16,
+      "sql_file": "queries/08_joins.sql"
+    },
+    "join_reconciliation": {
+      "rows": 1,
+      "sql_file": "queries/08_joins.sql"
+    },
+    "shipping_mode_review": {
+      "rows": 3,
+      "sql_file": "queries/09_advanced_analysis.sql"
+    },
+    "product_review": {
+      "rows": 25,
+      "sql_file": "queries/09_advanced_analysis.sql"
+    }
+  }
+}
