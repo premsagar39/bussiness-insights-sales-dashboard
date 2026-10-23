@@ -29,7 +29,8 @@ def run(source,project,host,port,user,database,password):
     if not required.issubset(raw.columns):raise ValueError("Use the compact-column Superstore CSV.")
     if raw.duplicated().any():raise ValueError("Review exact duplicate rows before loading.")
     df=raw.copy()
-    for col in df.select_dtypes(include=["object","str"]):df[col]=df[col].str.strip()
+    for col in df.columns:
+        if pd.api.types.is_string_dtype(df[col]):df[col]=df[col].str.strip()
     for col in ["OrderDate","ShipDate"]:df[col]=pd.to_datetime(df[col],errors="raise")
     if df[["OrderDate","ShipDate","Sales","Profit","OrderID","CustomerID"]].isna().any().any():
         raise ValueError("Required analysis fields contain missing values.")
