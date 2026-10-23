@@ -1,0 +1,30 @@
+{
+  "name": "Superstore_Sales_Insights",
+  "dataColors": [
+    "#167D8D",
+    "#D6A34B",
+    "#5265A2",
+    "#8B6CAE",
+    "#F6F7F9",
+    "#64748B",
+    "#FFFFFF",
+    "#172B3C"
+  ],
+  "background": "#F6F7F9",
+  "foreground": "#172B3C",
+  "tableAccent": "#167D8D",
+  "good": "#27856D",
+  "bad": "#C2414A",
+  "neutral": "#5265A2",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold"
+    },
+    "label": {
+      "fontFace": "Segoe UI"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold"
+    }
+  }
+}

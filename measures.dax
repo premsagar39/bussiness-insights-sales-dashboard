@@ -1,0 +1,65 @@
+Sales =
+SUM(Sales[Sales])
+
+Profit =
+SUM(Sales[Profit])
+
+Profit Margin =
+DIVIDE([Profit],[Sales])
+
+Orders =
+DISTINCTCOUNT(Sales[OrderID])
+
+Customers =
+DISTINCTCOUNT(Sales[CustomerID])
+
+Units =
+SUM(Sales[Quantityorderednew])
+
+Sales per Order =
+DIVIDE([Sales],[Orders])
+
+Order Lines =
+COUNTROWS(Sales)
+
+Average Discount =
+AVERAGE(Sales[Discount])
+
+Loss Lines =
+CALCULATE([Order Lines],KEEPFILTERS(Sales[Profit]<0))
+
+Loss Line Share =
+DIVIDE([Loss Lines],[Order Lines])
+
+Loss Amount =
+-CALCULATE([Profit],KEEPFILTERS(Sales[Profit]<0))
+
+Sales Previous Month =
+CALCULATE([Sales],DATEADD(Dates[Date],-1,MONTH))
+
+Sales MoM =
+DIVIDE([Sales]-[Sales Previous Month],[Sales Previous Month])
+
+Sales YTD =
+TOTALYTD([Sales],Dates[Date])
+
+Sales Running Total =
+VAR CutoffDate=MAX(Dates[Date]) RETURN CALCULATE([Sales],FILTER(ALLSELECTED(Dates),Dates[Date]<=CutoffDate))
+
+Average Days to Ship =
+AVERAGE(Sales[Days to Ship])
+
+Repeat Customers =
+COUNTROWS(FILTER(VALUES(Sales[CustomerID]),CALCULATE([Orders])>1))
+
+Repeat Customer Share =
+DIVIDE([Repeat Customers],[Customers])
+
+Subcategory Sales Rank =
+RANKX(ALLSELECTED(Products[ProductSubCategory]),[Sales],,DESC,DENSE)
+
+Subcategory Sales Share =
+DIVIDE([Sales],CALCULATE([Sales],ALLSELECTED(Products[ProductSubCategory])))
+
+Shipping Cost =
+SUM(Sales[ShippingCost])
